@@ -1,0 +1,58 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .landing__hero-img--container{
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+// }
+.landing__hero-img--container{
+  // position: absolute;
+  // top:0;
+  // right:0;
+  // bottom:0;
+  // left:0;
+  img{
+    filter: brightness(55%);
+  }
+}
+.landing__hero-text--container{
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+.landing__hero--text{
+  font-size: 6em;
+}
+.landing__cta--container{
+  margin-top: 16px;
+}
+.landing__cta-btn{
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  height: 40px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-weight: bolder;
+  transition: .3s ease all;
+  &:hover{
+    border: none;
+    color: white;
+    background-color: $ziller-purple;
+  }
+}
+.landing__hours--container{
+
+}

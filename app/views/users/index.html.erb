@@ -1,2 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="relative">
+  <div class="landing__hero-img--container">
+    <img class="width--full" src="<%= asset_path('landing-hero.jpeg')  %>" alt="">
+  </div>
+  <div class="landing__hero-text--container">
+    <div class="text-center">
+      <h1 class="landing__hero--text">ZILLER KARAOKE</h1>
+      <h3>1050 W Valencia Dr. Fullerton, CA 92833</h3>
+      <h3>(714) 626-2122</h3>
+      <div class="landing__cta--container">
+        <button class="landing__cta-btn" type="button" name="button">HOURS</button>
+      </div>
+      <div class="landing__cta--container">
+        <button class="landing__cta-btn" type="button" name="button">MAKE A RESERVATION</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="relative">
+  <%= render 'partials/hours' %>
+</div>

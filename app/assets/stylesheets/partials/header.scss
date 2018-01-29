@@ -1,0 +1,19 @@
+.header__logo--container{
+  width: 130px;
+  padding: 16px 0;
+  position: relative;
+}
+.header__navigation--btn{
+  height: 40px;
+  color: $ziller-purple;
+  background: transparent;
+  border: 1px solid $ziller-purple;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-weight: bolder;
+  transition: .3s ease all;
+  &:hover{
+    color: white;
+    background-color: $ziller-purple;
+  }
+}

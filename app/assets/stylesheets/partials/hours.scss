@@ -1,0 +1,55 @@
+.hours__content-title--container{
+  margin: 32px 0;
+  font-size: 32px;
+}
+.hours__week-displays--container{
+  height: 50px;
+}
+.hours__days--container{
+  @extend .flex-center;
+  @extend .height--full;
+}
+.hours__time-range{
+  @extend .text-white;
+  @extend .text--bold;
+  font-size: 24px;
+}
+.hours__img{
+  @extend .width--full;
+  filter: brightness(55%);
+  height: 450px;
+}
+.hours__days--container--inner{
+  height: 70%;
+  transition: .3s ease all;
+  p{
+    font-weight: bolder;
+  }
+}
+.hours__weekday , .hours__weekend{
+  .hours__time-range{
+    opacity: .4;
+  }
+}
+.hours__weekday.active, .hours__weekend.active{
+  .hours__time-range{
+    opacity: 1;
+  }
+}
+.hours__day{
+  @extend .flex-center-center;
+  padding: 0 16px;
+  height: 100%;
+  width: 100%;
+  transition: .2s ease all;
+}
+.hours__day.active{
+  background-color: $ziller-purple;
+  color: white;
+}
+// .hours__weekdays--container{
+//   @extend .flex-center-right;
+// }
+// .hours__weekends--container{
+//   @extend .flex-center-left;
+// }

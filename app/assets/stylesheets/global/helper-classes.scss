@@ -156,33 +156,7 @@ img{
   height: 100vh;
 }
 
-/*BACKGROUND */
-.bg-placeholder{
-  background-color: #f5f5f5;
-}
-.bg-white{
-  background-color: #ffffff;
-}
-.bg-red-orange{
-  background-color: #dbc9b3;
-}
-.bg-yellow{
-  background-color: #FED766;
-}
-.bg-navy{
-  background-color: #063042;
-}
-.bg-grey{
-  background-color: #a3a5a7;
-}
-.bg-light-grey{
-  background-color: #f9f9f9;
-}
-@media(max-width: 991px){
-  /*.height--full{
-    height: auto;
-  }*/
-}
+
 
 
 .bg-transparent{
@@ -430,6 +404,9 @@ img{
 .flex-wrap{
   flex-wrap: wrap;
 }
+.justify-start{
+  justify-content: flex-start;
+}
 .justify-end{
   justify-content: flex-end;
 }
@@ -445,7 +422,35 @@ img{
 .align-center{
   align-items: center;
 }
-
+.flex-center{
+  @extend .flex;
+  @extend .align-center;
+}
+.flex-center-around{
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-around;
+}
+.flex-center-between{
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-between;
+}
+.flex-center-center{
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-center;
+}
+.flex-center-left{
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-start;
+}
+.flex-center-right{
+  @extend .flex;
+  @extend .align-center;
+  @extend .justify-end;
+}
 .is-relative{
   position: relative;
 }

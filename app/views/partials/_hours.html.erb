@@ -1,0 +1,56 @@
+<div class="landing__hours--container" id="hours">
+  <div class="page-width">
+    <div class="grid">
+      <div class="grid__item one-whole">
+        <div class="hours__content-title--container">
+          <h3 class="text-center">HOURS</h3>
+        </div>
+      </div>
+    </div>
+    <div class="hours__week-displays--container">
+      <div class="grid height--full">
+        <div class="grid__item one-half height--full">
+          <div class="hours__days--container hours__weekdays--container">
+            <div class="hours__days--container--inner flex-center-around width--full">
+              <p class="hours__day" data-day="sunday" data-type="weekday">SUNDAY</p>
+              <p class="hours__day" data-day="monday" data-type="weekday">MONDAY</p>
+              <p class="hours__day" data-day="tuesday" data-type="weekday">TUESDAY</p>
+              <p class="hours__day" data-day="wednesday" data-type="weekday">WEDNEDSAY</p>
+              <p class="hours__day" data-day="thursday" data-type="weekday">THURSDAY</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item one-half height--full">
+          <div class="hours__days--container hours__weekends--container ">
+            <div class="hours__days--container--inner flex-center-around width--full">
+              <p class="hours__day" data-day="friday" data-type="weekend">FRIDAY</p>
+              <p class="hours__day" data-day="saturday" data-type="weekend">SATURDAY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="grid__item large-up--one-half">
+        <div class="relative hours__weekday active">
+          <div class="hours__img--container">
+            <img class="hours__img" src="<%= asset_path('chill.jpeg')  %>" alt="">
+          </div>
+          <div class="el-overlay flex-center-center">
+            <p class="hours__time-range">7PM - 2AM</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid__item large-up--one-half">
+        <div class="relative hours__weekend">
+          <div class="hours__img--container">
+            <img class="hours__img" src="<%= asset_path('chill2.jpeg')  %>" alt="">
+          </div>
+          <div class="el-overlay flex-center-center">
+            <p class="hours__time-range">5PM - 2AM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
