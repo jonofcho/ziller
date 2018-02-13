@@ -1,0 +1,101 @@
+<div id="modal"> <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+    <!-- Modal content -->
+    <div class="reservation__modal--container">
+      <div class="reservation__modal-logo--container">
+        <img class="width--full" src="<%= asset_path('logo.png')  %>" alt="">
+      </div>
+      <div class="text-center">
+        <h3>Make a Reservation!</h3>
+      </div>
+      <div class="reservation__modal-form--container">
+        <form id="reservation__modal--form" class="reservation__modal--form" class="" action="/reservations" method="post" data-remote="true">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+          <div class="row">
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Name:</label>
+                <div class="">
+                  <input id="reservation__name" class="reservation__modal--input" type="text" name="reservation[customer_name]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Email:</label>
+                <div class="">
+                  <input id="reservation__email" class="reservation__modal--input" type="text" name="reservation[email]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Phone #:</label>
+                <div class="">
+                  <input id="reservation__phone" class="reservation__modal--input" type="text" name="reservation[phone]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Guest Count</label>
+                <div class="">
+                  <input id="reservation__guest-count" class="reservation__modal--input" type="text" name="reservation[guest]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Date</label>
+                <div class="">
+                  <input id="reservation__date" class="reservation__modal--input" type="text" name="reservation[date]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Arrival Time</label>
+                <div class="">
+                  <input id="reservation__arrival" class="reservation__modal--input" type="text" name="reservation[arriving_time]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Service</label>
+                <div class="">
+                  <input id="reservation__service" class="reservation__modal--input" type="text" name="reservation[service]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Occassion:</label>
+                <div class="">
+                  <input id="reservation__occasion" class="reservation__modal--input" type="text" name="reservation[occasion]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-input--container">
+                <label class="reservation__form--label">Additional Comments</label>
+                <div class="">
+                  <input id="reservation__comments" class="reservation__modal--input" type="text" name="reservation[comments]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="reservation__modal-form-submit--container text-center">
+                <input id="" class="reservation__modal-form-submit" type="submit" name="" value="SUBMIT">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="reservation__submit--success hide">
+      SUCESS
+    </div>
+    <div class="reservation__submit--fail hide">
+      FAIL
+    </div>
+</div>

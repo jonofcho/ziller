@@ -3,8 +3,6 @@ class UsersController < ApplicationController
     today = Date::DAYNAMES[Date.today.wday]
     puts today
     @date = today.downcase
-    if admin_signed_in?
-      @verify = true
-    end
+    @collections = Collection.all
   end
 end

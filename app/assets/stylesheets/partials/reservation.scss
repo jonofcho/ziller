@@ -1,0 +1,40 @@
+.reservation__modal--container{
+  padding: 32px;
+}
+.reservation__modal-logo--container{
+  max-width: 120px;
+  margin: 0 auto;
+}
+.reservation__modal-form--container{
+  padding-top: 16px;
+  @extend .width--full;
+  @extend .flex-center-center;
+}
+.reservation__modal-form-input--container{
+  margin-top: 16px;
+}
+.reservation__modal--form{
+  @extend .width--full;
+}
+.reservation__form--label{
+  font-weight: bolder;
+}
+.reservation__modal--input{
+  @extend .width--full;
+  border: 1px solid $primary-color;
+  padding-left: 8px;
+  height: 30px;
+  border-radius: 3px;
+}
+.reservation__modal-form-submit--container{
+  margin-top: 16px;
+}
+.reservation__modal-form-submit{
+    background-color: $ziller-purple;
+    color: white;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    font-weight: bolder;
+    border-radius: 3px;
+}

@@ -1,0 +1,15 @@
+<div class="page-width">
+
+  <div class="">
+    <% for collection in @collections %>
+    <div class="">
+      <h3><%= collection.name%></h3>
+      <div class="">
+        <% for product in collection.products %>
+        <p><%= product.name %></p>
+        <% end%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="page-width">
+
+
+  <%= form_with scope: :collection, url: collections_path, local: true do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>

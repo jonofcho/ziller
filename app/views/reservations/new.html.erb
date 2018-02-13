@@ -1,0 +1,50 @@
+<h1>New Reservation</h1>
+<div class="page-width">
+
+
+  <%= form_with scope: :reservation, url: reservations_path, local: true do |form| %>
+    <p>
+      <%= form.label :customer_name %><br>
+      <%= form.text_field :customer_name %>
+    </p>
+    <p>
+      <%= form.label :email %><br>
+      <%= form.text_field :email %>
+    </p>
+    <p>
+      <%= form.label :phone %><br>
+      <%= form.text_field :phone %>
+    </p>
+    <p>
+      <%= form.label :guest %><br>
+      <%= form.text_field :guest %>
+    </p>
+    <p>
+      <%= form.label :date %><br>
+      <%= form.text_field :date %>
+    </p>
+    <p>
+      <%= form.label :arriving_time %><br>
+      <%= form.text_field :arriving_time %>
+    </p>
+    <p>
+      <%= form.label :service %><br>
+      <%= form.text_field :service %>
+    </p>
+    <p>
+      <%= form.label :occasion %><br>
+      <%= form.text_field :occasion %>
+    </p>
+    <p>
+      <%= form.label :comments %><br>
+      <%= form.text_field :comments %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>
+
+
+
+<%= link_to 'Back', reservations_path %>

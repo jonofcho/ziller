@@ -1,0 +1,21 @@
+EDIT PAGE
+
+
+
+<div class="">
+  <%= @collection.name%>
+  <div class="" style="border:1px solid  blue">
+    PRODUCTS IN COLLECTION
+    <% for product in @collection.products %>
+      <p>  <%= product.name %></p>
+      <p> <%= product.price %></p>
+    <% end %>
+  </div>
+</div>
+<form class="collection__product--form" action="/products" method="post" data-id="<%= @collection.id %>">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  <input type="hidden" name="product[collection_id]" value="<%=  @collection.id %>">
+  <input id="product__name" type="text" name="product[name]" value="" placeholder="Name">
+  <input id="product__price" type="text" name="product[price]" value="" placeholder="Price">
+  <input type="submit" name="" value="Add to Collection">
+</form>

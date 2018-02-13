@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'admin' => 'admin#home'
+
   devise_for :admins, path: 'admins'
+  
+  resources :reservations
   resources :collections
-  resources :products
   resources :users
+  resources :products
 
   devise_scope :admin do
     get 'sign_in', to: 'devise/sessions#new'

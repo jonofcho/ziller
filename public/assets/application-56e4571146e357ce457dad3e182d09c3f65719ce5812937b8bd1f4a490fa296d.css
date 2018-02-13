@@ -1,0 +1,6199 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/*================ Color Variables ============setting====*/
+/*================ Typography Variables ================*/
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+==============================================================================*/
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+/*================ Sizing Variables ================*/
+/*================ Z-Index ================*/
+/*================ SVG ================*/
+/*================ Mixins ================*/
+/*============================================================================
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+==============================================================================*/
+/*================ Media Query Mixin ================*/
+/*================ Responsive Show/Hide Helper ================*/
+/*================ Responsive Text Alignment Helper ================*/
+/*============================================================================
+  Form scaffolding
+    - Selectors setup for you to style form elements how you want
+    - Focus, error, and disabled states are set to be extended
+==============================================================================*/
+/* line 6, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+input,
+textarea,
+select {
+  border: 1px solid #f6f6f6;
+  border-radius: 0;
+  max-width: 100%;
+}
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+input[disabled],
+textarea[disabled],
+select[disabled] {
+  cursor: default;
+  background-color: #000;
+  border-color: #000;
+}
+
+/* line 24, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+textarea {
+  min-height: 100px;
+}
+
+/*================ Custom select style ================*/
+/* line 29, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right center;
+  background-image: url({{ "ico-select.svg" | asset_url }});
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-color: transparent;
+  padding-right: 28px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  cursor: pointer;
+  /*================ Hide the svg arrow in IE9 ================*/
+}
+/* line 44, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+.ie9 select {
+  padding-right: 10px;
+  background-image: none;
+}
+
+/* line 50, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+select::-ms-expand {
+  display: none;
+}
+
+/*================ Error styles ================*/
+/* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/forms.scss */
+input.input-error,
+select.input-error,
+textarea.input-error {
+  border-color: #000;
+  background-color: #000;
+  color: #000;
+}
+
+/*============================================================================
+  Grid
+    - Based on CSS Wizardry grid
+==============================================================================*/
+/* line 6, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.grid {
+  *zoom: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -25px;
+}
+/* line 3, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.grid::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 989px) {
+  /* line 6, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid {
+    margin-left: -15px;
+  }
+}
+
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.grid__item {
+  float: left;
+  padding-left: 25px;
+  width: 100%;
+}
+@media only screen and (max-width: 989px) {
+  /* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid__item {
+    padding-left: 15px;
+  }
+}
+/* line 25, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.grid__item[class*='--push'] {
+  position: relative;
+}
+
+/*============================================================================
+  Reversed grids allow you to structure your source in the opposite
+  order to how your rendered layout will appear.
+==============================================================================*/
+/* line 34, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.grid--rev {
+  direction: rtl;
+  text-align: left;
+}
+/* line 38, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.grid--rev > .grid__item {
+  direction: ltr;
+  text-align: left;
+  float: right;
+}
+
+/*============================================================================
+  Grid Columns
+    - Create width classes, prepended by the breakpoint name.
+==============================================================================*/
+/*================ Grid push classes ================*/
+/*================ Clearfix helper on uniform grids ================*/
+/*================ Build Base Grid Classes ================*/
+/** Whole */
+/* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-whole {
+  width: 100%;
+}
+
+/* Halves */
+/* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-half {
+  width: 50%;
+}
+
+/* Thirds */
+/* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-third {
+  width: 33.3333333333%;
+}
+
+/* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-thirds {
+  width: 66.6666666667%;
+}
+
+/* Quarters */
+/* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-quarter {
+  width: 25%;
+}
+
+/* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-quarters {
+  width: 50%;
+}
+
+/* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-quarters {
+  width: 75%;
+}
+
+/* Fifths */
+/* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-fifth {
+  width: 20%;
+}
+
+/* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-fifths {
+  width: 40%;
+}
+
+/* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-fifths {
+  width: 60%;
+}
+
+/* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.four-fifths {
+  width: 80%;
+}
+
+/* Sixths */
+/* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-sixth {
+  width: 16.6666666667%;
+}
+
+/* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-sixths {
+  width: 33.3333333333%;
+}
+
+/* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-sixths {
+  width: 50%;
+}
+
+/* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.four-sixths {
+  width: 66.6666666667%;
+}
+
+/* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.five-sixths {
+  width: 83.3333333333%;
+}
+
+/* Eighths */
+/* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-eighth {
+  width: 12.5%;
+}
+
+/* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-eighths {
+  width: 25%;
+}
+
+/* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-eighths {
+  width: 37.5%;
+}
+
+/* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.four-eighths {
+  width: 50%;
+}
+
+/* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.five-eighths {
+  width: 62.5%;
+}
+
+/* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.six-eighths {
+  width: 75%;
+}
+
+/* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.seven-eighths {
+  width: 87.5%;
+}
+
+/* Tenths */
+/* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-tenth {
+  width: 10%;
+}
+
+/* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-tenths {
+  width: 20%;
+}
+
+/* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-tenths {
+  width: 30%;
+}
+
+/* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.four-tenths {
+  width: 40%;
+}
+
+/* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.five-tenths {
+  width: 50%;
+}
+
+/* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.six-tenths {
+  width: 60%;
+}
+
+/* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.seven-tenths {
+  width: 70%;
+}
+
+/* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.eight-tenths {
+  width: 80%;
+}
+
+/* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.nine-tenths {
+  width: 90%;
+}
+
+/* Twelfths */
+/* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.one-twelfth {
+  width: 8.3333333333%;
+}
+
+/* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.two-twelfths {
+  width: 16.6666666667%;
+}
+
+/* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.three-twelfths {
+  width: 25%;
+}
+
+/* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.four-twelfths {
+  width: 33.3333333333%;
+}
+
+/* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.five-twelfths {
+  width: 41.6666666667%;
+}
+
+/* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.six-twelfths {
+  width: 50%;
+}
+
+/* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.seven-twelfths {
+  width: 58.3333333333%;
+}
+
+/* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.eight-twelfths {
+  width: 66.6666666667%;
+}
+
+/* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.nine-twelfths {
+  width: 75%;
+}
+
+/* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.ten-twelfths {
+  width: 83.3333333333%;
+}
+
+/* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+.eleven-twelfths {
+  width: 91.6666666667%;
+}
+
+/* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.show {
+  display: block !important;
+}
+
+/* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/*================ Build Responsive Grid Classes ================*/
+@media only screen and (max-width: 749px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .small--one-half:nth-child(2n+1),
+  .grid--uniform .small--one-third:nth-child(3n+1),
+  .grid--uniform .small--one-quarter:nth-child(4n+1),
+  .grid--uniform .small--one-fifth:nth-child(5n+1),
+  .grid--uniform .small--one-sixth:nth-child(6n+1),
+  .grid--uniform .small--two-sixths:nth-child(3n+1),
+  .grid--uniform .small--three-sixths:nth-child(2n+1),
+  .grid--uniform .small--one-eighth:nth-child(8n+1),
+  .grid--uniform .small--two-eighths:nth-child(4n+1),
+  .grid--uniform .small--four-eighths:nth-child(2n+1),
+  .grid--uniform .small--five-tenths:nth-child(2n+1),
+  .grid--uniform .small--one-twelfth:nth-child(12n+1),
+  .grid--uniform .small--two-twelfths:nth-child(6n+1),
+  .grid--uniform .small--three-twelfths:nth-child(4n+1),
+  .grid--uniform .small--four-twelfths:nth-child(3n+1),
+  .grid--uniform .small--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .small--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .small--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .small--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .small--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .small--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 989px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .medium--one-half:nth-child(2n+1),
+  .grid--uniform .medium--one-third:nth-child(3n+1),
+  .grid--uniform .medium--one-quarter:nth-child(4n+1),
+  .grid--uniform .medium--one-fifth:nth-child(5n+1),
+  .grid--uniform .medium--one-sixth:nth-child(6n+1),
+  .grid--uniform .medium--two-sixths:nth-child(3n+1),
+  .grid--uniform .medium--three-sixths:nth-child(2n+1),
+  .grid--uniform .medium--one-eighth:nth-child(8n+1),
+  .grid--uniform .medium--two-eighths:nth-child(4n+1),
+  .grid--uniform .medium--four-eighths:nth-child(2n+1),
+  .grid--uniform .medium--five-tenths:nth-child(2n+1),
+  .grid--uniform .medium--one-twelfth:nth-child(12n+1),
+  .grid--uniform .medium--two-twelfths:nth-child(6n+1),
+  .grid--uniform .medium--three-twelfths:nth-child(4n+1),
+  .grid--uniform .medium--four-twelfths:nth-child(3n+1),
+  .grid--uniform .medium--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 989px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .medium-down--one-half:nth-child(2n+1),
+  .grid--uniform .medium-down--one-third:nth-child(3n+1),
+  .grid--uniform .medium-down--one-quarter:nth-child(4n+1),
+  .grid--uniform .medium-down--one-fifth:nth-child(5n+1),
+  .grid--uniform .medium-down--one-sixth:nth-child(6n+1),
+  .grid--uniform .medium-down--two-sixths:nth-child(3n+1),
+  .grid--uniform .medium-down--three-sixths:nth-child(2n+1),
+  .grid--uniform .medium-down--one-eighth:nth-child(8n+1),
+  .grid--uniform .medium-down--two-eighths:nth-child(4n+1),
+  .grid--uniform .medium-down--four-eighths:nth-child(2n+1),
+  .grid--uniform .medium-down--five-tenths:nth-child(2n+1),
+  .grid--uniform .medium-down--one-twelfth:nth-child(12n+1),
+  .grid--uniform .medium-down--two-twelfths:nth-child(6n+1),
+  .grid--uniform .medium-down--three-twelfths:nth-child(4n+1),
+  .grid--uniform .medium-down--four-twelfths:nth-child(3n+1),
+  .grid--uniform .medium-down--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-down--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-down--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-down--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-down--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-down--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 750px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .medium-up--one-half:nth-child(2n+1),
+  .grid--uniform .medium-up--one-third:nth-child(3n+1),
+  .grid--uniform .medium-up--one-quarter:nth-child(4n+1),
+  .grid--uniform .medium-up--one-fifth:nth-child(5n+1),
+  .grid--uniform .medium-up--one-sixth:nth-child(6n+1),
+  .grid--uniform .medium-up--two-sixths:nth-child(3n+1),
+  .grid--uniform .medium-up--three-sixths:nth-child(2n+1),
+  .grid--uniform .medium-up--one-eighth:nth-child(8n+1),
+  .grid--uniform .medium-up--two-eighths:nth-child(4n+1),
+  .grid--uniform .medium-up--four-eighths:nth-child(2n+1),
+  .grid--uniform .medium-up--five-tenths:nth-child(2n+1),
+  .grid--uniform .medium-up--one-twelfth:nth-child(12n+1),
+  .grid--uniform .medium-up--two-twelfths:nth-child(6n+1),
+  .grid--uniform .medium-up--three-twelfths:nth-child(4n+1),
+  .grid--uniform .medium-up--four-twelfths:nth-child(3n+1),
+  .grid--uniform .medium-up--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-up--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-up--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-up--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-up--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .medium-up--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 990px) and (max-width: 1399px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .large--one-half:nth-child(2n+1),
+  .grid--uniform .large--one-third:nth-child(3n+1),
+  .grid--uniform .large--one-quarter:nth-child(4n+1),
+  .grid--uniform .large--one-fifth:nth-child(5n+1),
+  .grid--uniform .large--one-sixth:nth-child(6n+1),
+  .grid--uniform .large--two-sixths:nth-child(3n+1),
+  .grid--uniform .large--three-sixths:nth-child(2n+1),
+  .grid--uniform .large--one-eighth:nth-child(8n+1),
+  .grid--uniform .large--two-eighths:nth-child(4n+1),
+  .grid--uniform .large--four-eighths:nth-child(2n+1),
+  .grid--uniform .large--five-tenths:nth-child(2n+1),
+  .grid--uniform .large--one-twelfth:nth-child(12n+1),
+  .grid--uniform .large--two-twelfths:nth-child(6n+1),
+  .grid--uniform .large--three-twelfths:nth-child(4n+1),
+  .grid--uniform .large--four-twelfths:nth-child(3n+1),
+  .grid--uniform .large--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .large-down--one-half:nth-child(2n+1),
+  .grid--uniform .large-down--one-third:nth-child(3n+1),
+  .grid--uniform .large-down--one-quarter:nth-child(4n+1),
+  .grid--uniform .large-down--one-fifth:nth-child(5n+1),
+  .grid--uniform .large-down--one-sixth:nth-child(6n+1),
+  .grid--uniform .large-down--two-sixths:nth-child(3n+1),
+  .grid--uniform .large-down--three-sixths:nth-child(2n+1),
+  .grid--uniform .large-down--one-eighth:nth-child(8n+1),
+  .grid--uniform .large-down--two-eighths:nth-child(4n+1),
+  .grid--uniform .large-down--four-eighths:nth-child(2n+1),
+  .grid--uniform .large-down--five-tenths:nth-child(2n+1),
+  .grid--uniform .large-down--one-twelfth:nth-child(12n+1),
+  .grid--uniform .large-down--two-twelfths:nth-child(6n+1),
+  .grid--uniform .large-down--three-twelfths:nth-child(4n+1),
+  .grid--uniform .large-down--four-twelfths:nth-child(3n+1),
+  .grid--uniform .large-down--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-down--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-down--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-down--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-down--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-down--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 990px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .large-up--one-half:nth-child(2n+1),
+  .grid--uniform .large-up--one-third:nth-child(3n+1),
+  .grid--uniform .large-up--one-quarter:nth-child(4n+1),
+  .grid--uniform .large-up--one-fifth:nth-child(5n+1),
+  .grid--uniform .large-up--one-sixth:nth-child(6n+1),
+  .grid--uniform .large-up--two-sixths:nth-child(3n+1),
+  .grid--uniform .large-up--three-sixths:nth-child(2n+1),
+  .grid--uniform .large-up--one-eighth:nth-child(8n+1),
+  .grid--uniform .large-up--two-eighths:nth-child(4n+1),
+  .grid--uniform .large-up--four-eighths:nth-child(2n+1),
+  .grid--uniform .large-up--five-tenths:nth-child(2n+1),
+  .grid--uniform .large-up--one-twelfth:nth-child(12n+1),
+  .grid--uniform .large-up--two-twelfths:nth-child(6n+1),
+  .grid--uniform .large-up--three-twelfths:nth-child(4n+1),
+  .grid--uniform .large-up--four-twelfths:nth-child(3n+1),
+  .grid--uniform .large-up--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-up--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-up--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-up--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-up--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .large-up--text-center {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  /** Whole */
+  /* line 52, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-whole {
+    width: 100%;
+  }
+
+  /* Halves */
+  /* line 55, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-half {
+    width: 50%;
+  }
+
+  /* Thirds */
+  /* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-third {
+    width: 33.3333333333%;
+  }
+
+  /* line 59, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-thirds {
+    width: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 62, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-quarter {
+    width: 25%;
+  }
+
+  /* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-quarters {
+    width: 50%;
+  }
+
+  /* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-quarters {
+    width: 75%;
+  }
+
+  /* Fifths */
+  /* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-fifth {
+    width: 20%;
+  }
+
+  /* line 68, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-fifths {
+    width: 40%;
+  }
+
+  /* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-fifths {
+    width: 60%;
+  }
+
+  /* line 70, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--four-fifths {
+    width: 80%;
+  }
+
+  /* Sixths */
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-sixth {
+    width: 16.6666666667%;
+  }
+
+  /* line 74, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-sixths {
+    width: 33.3333333333%;
+  }
+
+  /* line 75, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-sixths {
+    width: 50%;
+  }
+
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--four-sixths {
+    width: 66.6666666667%;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--five-sixths {
+    width: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 80, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 81, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-eighths {
+    width: 25%;
+  }
+
+  /* line 82, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 83, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--four-eighths {
+    width: 50%;
+  }
+
+  /* line 84, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--six-eighths {
+    width: 75%;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--seven-eighths {
+    width: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-tenth {
+    width: 10%;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-tenths {
+    width: 20%;
+  }
+
+  /* line 91, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-tenths {
+    width: 30%;
+  }
+
+  /* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--four-tenths {
+    width: 40%;
+  }
+
+  /* line 93, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--five-tenths {
+    width: 50%;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--six-tenths {
+    width: 60%;
+  }
+
+  /* line 95, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--seven-tenths {
+    width: 70%;
+  }
+
+  /* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--eight-tenths {
+    width: 80%;
+  }
+
+  /* line 97, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--nine-tenths {
+    width: 90%;
+  }
+
+  /* Twelfths */
+  /* line 100, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--one-twelfth {
+    width: 8.3333333333%;
+  }
+
+  /* line 101, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--two-twelfths {
+    width: 16.6666666667%;
+  }
+
+  /* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--three-twelfths {
+    width: 25%;
+  }
+
+  /* line 103, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--four-twelfths {
+    width: 33.3333333333%;
+  }
+
+  /* line 104, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--five-twelfths {
+    width: 41.6666666667%;
+  }
+
+  /* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--six-twelfths {
+    width: 50%;
+  }
+
+  /* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--seven-twelfths {
+    width: 58.3333333333%;
+  }
+
+  /* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--eight-twelfths {
+    width: 66.6666666667%;
+  }
+
+  /* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--nine-twelfths {
+    width: 75%;
+  }
+
+  /* line 109, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--ten-twelfths {
+    width: 83.3333333333%;
+  }
+
+  /* line 110, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--eleven-twelfths {
+    width: 91.6666666667%;
+  }
+
+  /* line 177, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .grid--uniform .widescreen--one-half:nth-child(2n+1),
+  .grid--uniform .widescreen--one-third:nth-child(3n+1),
+  .grid--uniform .widescreen--one-quarter:nth-child(4n+1),
+  .grid--uniform .widescreen--one-fifth:nth-child(5n+1),
+  .grid--uniform .widescreen--one-sixth:nth-child(6n+1),
+  .grid--uniform .widescreen--two-sixths:nth-child(3n+1),
+  .grid--uniform .widescreen--three-sixths:nth-child(2n+1),
+  .grid--uniform .widescreen--one-eighth:nth-child(8n+1),
+  .grid--uniform .widescreen--two-eighths:nth-child(4n+1),
+  .grid--uniform .widescreen--four-eighths:nth-child(2n+1),
+  .grid--uniform .widescreen--five-tenths:nth-child(2n+1),
+  .grid--uniform .widescreen--one-twelfth:nth-child(12n+1),
+  .grid--uniform .widescreen--two-twelfths:nth-child(6n+1),
+  .grid--uniform .widescreen--three-twelfths:nth-child(4n+1),
+  .grid--uniform .widescreen--four-twelfths:nth-child(3n+1),
+  .grid--uniform .widescreen--six-twelfths:nth-child(2n+1) {
+    clear: both;
+  }
+
+  /* line 73, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .widescreen--show {
+    display: block !important;
+  }
+
+  /* line 77, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .widescreen--hide {
+    display: none !important;
+  }
+
+  /* line 86, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .widescreen--text-left {
+    text-align: left !important;
+  }
+
+  /* line 90, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .widescreen--text-right {
+    text-align: right !important;
+  }
+
+  /* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+  .widescreen--text-center {
+    text-align: center !important;
+  }
+}
+/*================ Build Grid Push Classes ================*/
+@media only screen and (max-width: 749px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .small--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 989px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (max-width: 989px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-down--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (min-width: 750px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .medium-up--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (min-width: 990px) and (max-width: 1399px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-down--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (min-width: 990px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .large-up--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  /* Halves */
+  /* line 116, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-half {
+    left: 50%;
+  }
+
+  /* Thirds */
+  /* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-third {
+    left: 33.3333333333%;
+  }
+
+  /* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-thirds {
+    left: 66.6666666667%;
+  }
+
+  /* Quarters */
+  /* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 124, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-quarters {
+    left: 50%;
+  }
+
+  /* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-quarters {
+    left: 75%;
+  }
+
+  /* Fifths */
+  /* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 130, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-four-fifths {
+    left: 80%;
+  }
+
+  /* Sixths */
+  /* line 134, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-sixth {
+    left: 16.6666666667%;
+  }
+
+  /* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-sixths {
+    left: 33.3333333333%;
+  }
+
+  /* line 136, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-sixths {
+    left: 50%;
+  }
+
+  /* line 137, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-four-sixths {
+    left: 66.6666666667%;
+  }
+
+  /* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-five-sixths {
+    left: 83.3333333333%;
+  }
+
+  /* Eighths */
+  /* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-eighth {
+    left: 12.5%;
+  }
+
+  /* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-eighths {
+    left: 25%;
+  }
+
+  /* line 143, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-eighths {
+    left: 37.5%;
+  }
+
+  /* line 144, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-four-eighths {
+    left: 50%;
+  }
+
+  /* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-five-eighths {
+    left: 62.5%;
+  }
+
+  /* line 146, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-six-eighths {
+    left: 75%;
+  }
+
+  /* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-seven-eighths {
+    left: 87.5%;
+  }
+
+  /* Tenths */
+  /* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-tenth {
+    left: 10%;
+  }
+
+  /* line 151, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-tenths {
+    left: 20%;
+  }
+
+  /* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-tenths {
+    left: 30%;
+  }
+
+  /* line 153, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-four-tenths {
+    left: 40%;
+  }
+
+  /* line 154, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-five-tenths {
+    left: 50%;
+  }
+
+  /* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-six-tenths {
+    left: 60%;
+  }
+
+  /* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-seven-tenths {
+    left: 70%;
+  }
+
+  /* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-eight-tenths {
+    left: 80%;
+  }
+
+  /* line 158, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-nine-tenths {
+    left: 90%;
+  }
+
+  /* Twelfths */
+  /* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-one-twelfth {
+    left: 8.3333333333%;
+  }
+
+  /* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-two-twelfths {
+    left: 16.6666666667%;
+  }
+
+  /* line 163, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-three-twelfths {
+    left: 25%;
+  }
+
+  /* line 164, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-four-twelfths {
+    left: 33.3333333333%;
+  }
+
+  /* line 165, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-five-twelfths {
+    left: 41.6666666667%;
+  }
+
+  /* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-six-twelfths {
+    left: 50%;
+  }
+
+  /* line 167, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-seven-twelfths {
+    left: 58.3333333333%;
+  }
+
+  /* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-eight-twelfths {
+    left: 66.6666666667%;
+  }
+
+  /* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-nine-twelfths {
+    left: 75%;
+  }
+
+  /* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-ten-twelfths {
+    left: 83.3333333333%;
+  }
+
+  /* line 171, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/grid.scss */
+  .widescreen--push-eleven-twelfths {
+    left: 91.6666666667%;
+  }
+}
+/*================ Helper Classes ================*/
+/* line 2, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 3, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 6, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* line 10, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.js-focus-hidden:focus {
+  outline: none;
+}
+
+/* line 14, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.label-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+/* line 18, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.no-placeholder .label-hidden {
+  position: inherit !important;
+  overflow: auto;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* line 23, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.visually-shown {
+  position: inherit !important;
+  overflow: auto;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* line 28, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.no-js:not(html) {
+  display: none;
+}
+/* line 31, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.no-js .no-js:not(html) {
+  display: block;
+}
+
+/* line 38, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.no-js .js {
+  display: none;
+}
+
+/* line 44, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.supports-no-cookies:not(html) {
+  display: none;
+}
+/* line 47, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+html.supports-no-cookies .supports-no-cookies:not(html) {
+  display: block;
+}
+
+/* line 54, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+html.supports-no-cookies .supports-cookies {
+  display: none;
+}
+
+/*============================================================================
+  Skip to content button
+    - Overrides .visually-hidden when focused
+==============================================================================*/
+/* line 63, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.skip-link:focus {
+  position: absolute !important;
+  overflow: auto;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background-color: #fff;
+  padding: 12.5px;
+  z-index: 10000;
+  transition: none;
+}
+
+/*@media(max-width: 992px){
+  h1{
+    font-size: 34px;
+  }
+  h2{
+    font-size: 32px;
+  }
+  h3{
+    font-size: 30px;
+  }
+  h4{
+    font-size: 28px;
+  }
+}*/
+/* line 89, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.float-right {
+  float: right;
+}
+
+/* line 92, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.float-left {
+  float: left;
+}
+
+/* line 96, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.column-2 {
+  column-count: 2;
+}
+
+/* line 99, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.column-3 {
+  column-count: 3;
+}
+
+/* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.column-4 {
+  column-count: 4;
+}
+
+/* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.is-block {
+  display: block;
+}
+
+/* line 108, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.is-inline-block {
+  display: inline-block;
+}
+
+/* line 111, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.open {
+  display: block !important;
+}
+
+/* line 114, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.open-flex {
+  display: flex !important;
+}
+
+/* line 117, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.hidden {
+  display: none;
+}
+
+/* line 120, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-underline {
+  text-decoration: underline;
+}
+
+/* line 123, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* line 126, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+img {
+  width: 100%;
+}
+
+/* line 129, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 132, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 135, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 139, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.transition {
+  transition: all ease .3s;
+}
+
+/* line 142, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.opacity-off {
+  opacity: 0;
+}
+
+/* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.opacity-on {
+  opacity: 1;
+}
+
+/* line 149, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.width--full, .hours__img, .reservation__modal-form--container, .reservation__modal--form, .reservation__modal--input {
+  width: 100%;
+}
+
+/* line 152, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.height--full, .hours__days--container {
+  height: 100%;
+}
+
+/* line 155, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.height--full--view {
+  height: 100vh;
+}
+
+/* line 162, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.bg-transparent {
+  background-color: transparent;
+}
+
+/* line 166, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-white, .hours__time-range {
+  color: #ffffff;
+}
+
+/* line 169, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-lighter-grey {
+  color: #B3B3B3;
+}
+
+/* line 172, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-light-grey {
+  color: #696969;
+}
+
+/* line 175, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-medium-grey {
+  color: #8d8d8d;
+}
+
+/* line 178, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-dark-grey {
+  color: #545454;
+}
+
+/* line 181, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text-black {
+  color: #000000;
+}
+
+/* line 185, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--fine-print {
+  font-size: 0.571em;
+}
+
+/* line 188, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--smaller {
+  font-size: 0.714em;
+}
+
+/* line 192, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--small {
+  font-size: 0.857em;
+}
+
+/* line 196, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--semi-small {
+  font-size: 0.929em;
+}
+
+/* line 200, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--default {
+  font-size: 1em;
+}
+
+/* line 204, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--medium {
+  font-size: 1.143em;
+}
+
+/* line 208, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--large {
+  font-size: 1.214em;
+}
+
+/* line 212, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--semi-large {
+  font-size: 1.286em;
+}
+
+/* line 216, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--extra-large {
+  font-size: 1.429em;
+}
+
+/* line 220, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--reduced {
+  font-weight: 100;
+}
+
+/* line 223, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--semibold {
+  font-weight: bold;
+}
+
+/* line 226, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.text--bold, .hours__time-range {
+  font-weight: bolder;
+}
+
+/*PADDINGS*/
+/* line 230, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.padding-none {
+  padding: 0;
+}
+
+/* line 233, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pleft-15 {
+  padding-left: 15px;
+}
+
+/* line 237, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-15 {
+  padding: 0 15px;
+}
+
+/* line 240, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-25 {
+  padding: 0 25px;
+}
+
+/* line 243, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-30 {
+  padding: 0 30px;
+}
+
+/* line 246, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pleft-15 {
+  padding-left: 15px;
+}
+
+/* line 249, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pleft-20 {
+  padding-left: 20px;
+}
+
+/* line 252, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pleft-30 {
+  padding-left: 30px;
+}
+
+/* line 255, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pleft-32 {
+  padding-left: 32px;
+}
+
+/* line 258, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pright-15 {
+  padding-right: 15px;
+}
+
+/* line 261, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pright-20 {
+  padding-right: 20px;
+}
+
+/* line 264, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pright-30 {
+  padding-right: 30px;
+}
+
+/* line 267, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-30 {
+  padding: 0 30px;
+}
+
+/* line 271, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pbot-5 {
+  padding-bottom: 5px;
+}
+
+/* line 274, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pbot-10 {
+  padding-bottom: 10px;
+}
+
+/* line 277, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pbot-15 {
+  padding-bottom: 15px;
+}
+
+/* line 280, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pbot-20 {
+  padding-bottom: 20px;
+}
+
+/* line 283, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.pbot-30 {
+  padding-bottom: 30px;
+}
+
+/* line 287, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.ptop-15 {
+  padding-top: 15px;
+}
+
+/* line 290, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.ptop-20 {
+  padding-top: 20px;
+}
+
+/* line 293, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.ptop-30 {
+  padding-top: 30px;
+}
+
+/* line 296, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.ptop-48 {
+  padding-top: 48px;
+}
+
+/* line 299, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-15 {
+  padding: 0 15px;
+}
+
+/* line 302, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.psides-45 {
+  padding: 0 45px;
+}
+
+/* line 305, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.padding-15 {
+  padding: 15px;
+}
+
+/* line 308, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.padding-30 {
+  padding: 30px;
+}
+
+/*MARGINS*/
+/* line 312, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.margin-center {
+  margin: 0 auto;
+}
+
+/* line 315, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.margin-none {
+  margin: 0 !important;
+}
+
+/* line 318, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-0 {
+  margin-top: 0px;
+}
+
+/* line 321, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-10 {
+  margin-top: 10px;
+}
+
+/* line 324, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-15 {
+  margin-top: 15px;
+}
+
+/* line 327, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-16 {
+  margin-top: 16px;
+}
+
+/* line 330, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-25 {
+  margin-top: 25px;
+}
+
+/* line 333, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-30 {
+  margin-top: 30px;
+}
+
+/* line 336, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-40 {
+  margin-top: 40px;
+}
+
+/* line 339, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-50 {
+  margin-top: 50px;
+}
+
+/* line 342, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mtop-80 {
+  margin-top: 80px;
+}
+
+/* line 345, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-0 {
+  margin-bottom: 0px;
+}
+
+/* line 348, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-8 {
+  margin-bottom: 8px;
+}
+
+/* line 351, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-15 {
+  margin-bottom: 15px;
+}
+
+/* line 354, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-18 {
+  margin-bottom: 18px;
+}
+
+/* line 357, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-24 {
+  margin-bottom: 24px;
+}
+
+/* line 360, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-27 {
+  margin-bottom: 27px;
+}
+
+/* line 363, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-30 {
+  margin-bottom: 30px;
+}
+
+/* line 366, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-40 {
+  margin-bottom: 40px;
+}
+
+/* line 369, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-50 {
+  margin-bottom: 50px;
+}
+
+/* line 372, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mbot-60 {
+  margin-bottom: 60px;
+}
+
+/* line 375, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mleft-15 {
+  margin-left: 15px;
+}
+
+/* line 378, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mleft-24 {
+  margin-left: 24px;
+}
+
+/* line 381, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mleft-30 {
+  margin-left: 30px;
+}
+
+/* line 384, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mright-8 {
+  margin-right: 8px;
+}
+
+/* line 387, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mright-12 {
+  margin-right: 12px;
+}
+
+/* line 390, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mright-16 {
+  margin-right: 16px;
+}
+
+/* line 393, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mright-15 {
+  margin-right: 15px;
+}
+
+/* line 396, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.mright-30 {
+  margin-right: 30px;
+}
+
+/* line 401, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.flex, .flex-center, .hours__days--container, .flex-center-around, .flex-center-between, .flex-center-center, .hours__day, .reservation__modal-form--container, .flex-center-left, .flex-center-right {
+  display: flex;
+}
+
+/* line 404, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* line 407, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.justify-start, .flex-center-left {
+  justify-content: flex-start;
+}
+
+/* line 410, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.justify-end, .flex-center-right {
+  justify-content: flex-end;
+}
+
+/* line 413, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.justify-center, .flex-center-center, .hours__day, .reservation__modal-form--container {
+  justify-content: center;
+}
+
+/* line 416, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.justify-between, .flex-center-between {
+  justify-content: space-between;
+}
+
+/* line 419, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.justify-around, .flex-center-around {
+  justify-content: space-around;
+}
+
+/* line 422, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.align-center, .flex-center, .hours__days--container, .flex-center-around, .flex-center-between, .flex-center-center, .hours__day, .reservation__modal-form--container, .flex-center-left, .flex-center-right {
+  align-items: center;
+}
+
+/* line 454, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.is-relative {
+  position: relative;
+}
+
+/* line 457, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.is-absolute {
+  position: absolute;
+}
+
+/* line 460, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.is-fixed {
+  position: fixed;
+}
+
+/* line 464, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.el-overlay {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 471, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+li {
+  list-style: none;
+}
+
+/* line 475, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.border-none {
+  border: 0px;
+}
+
+/* line 478, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.box-shadow-none {
+  box-shadow: none;
+}
+
+/*BUTTONS*/
+/* line 483, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.btn {
+  height: 40px;
+  border-radius: 5px;
+  border-radius: 0;
+}
+
+/* line 488, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.btn-small {
+  width: 150px;
+}
+
+/* line 492, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 495, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.relative {
+  position: relative;
+}
+
+/* line 499, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.hover-pointer {
+  cursor: pointer;
+}
+
+/* line 503, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/helper-classes.scss */
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+/*================ General layout styles ================*/
+/* line 2, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/layout.scss */
+body,
+html {
+  background-color: #fff;
+}
+
+/* line 7, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/layout.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 11, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/layout.scss */
+.page-width {
+  *zoom: 1;
+  max-width: 1440px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+/* line 3, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/tools/mixins.scss */
+.page-width::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 989px) {
+  /* line 11, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/layout.scss */
+  .page-width {
+    padding: 0 15px;
+  }
+}
+
+/*================ Links & Buttons ================*/
+/* line 2, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/links-buttons.scss */
+.btn {
+  -moz-user-select: "none";
+  -ms-user-select: "none";
+  -webkit-user-select: "none";
+  user-select: "none";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 0;
+}
+
+/* line 2, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+/* line 5, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-1, .side-nav {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* line 8, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-1-half {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 11, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* line 14, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-4 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 20, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.z-depth-5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 25, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav {
+  position: fixed;
+  width: 300px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transform: translateX(-100%);
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateX(-105%);
+}
+/* line 46, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav.right-aligned {
+  right: 0;
+  transform: translateX(105%);
+  left: auto;
+  transform: translateX(100%);
+}
+/* line 53, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .collapsible {
+  margin: 0;
+}
+/* line 102, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .divider {
+  margin: 8px 0 0 0;
+}
+/* line 106, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .subheader {
+  cursor: initial;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 48px;
+}
+/* line 107, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .subheader:hover {
+  background-color: transparent;
+}
+/* line 119, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view,
+.side-nav .userView {
+  position: relative;
+  padding: 32px 32px 0;
+  margin-bottom: 8px;
+}
+/* line 125, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view > a,
+.side-nav .userView > a {
+  height: auto;
+  padding: 0;
+}
+/* line 126, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view > a:hover,
+.side-nav .userView > a:hover {
+  background-color: transparent;
+}
+/* line 131, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .background,
+.side-nav .userView .background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+/* line 141, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .circle, .side-nav .user-view .name, .side-nav .user-view .email,
+.side-nav .userView .circle,
+.side-nav .userView .name,
+.side-nav .userView .email {
+  display: block;
+}
+/* line 145, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .circle,
+.side-nav .userView .circle {
+  height: 64px;
+  width: 64px;
+}
+/* line 150, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .name,
+.side-nav .user-view .email,
+.side-nav .userView .name,
+.side-nav .userView .email {
+  font-size: 14px;
+  line-height: 24px;
+}
+/* line 156, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .name,
+.side-nav .userView .name {
+  margin-top: 16px;
+  font-weight: 500;
+}
+/* line 161, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .user-view .email,
+.side-nav .userView .email {
+  padding-bottom: 16px;
+  font-weight: 400;
+}
+
+/* line 170, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.drag-target {
+  height: 100%;
+  width: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 998;
+}
+
+/* line 180, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav.fixed {
+  left: 0;
+  transform: translateX(0);
+  position: fixed;
+}
+/* line 186, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav.fixed.right-aligned {
+  right: 0;
+  left: auto;
+}
+
+@media medium-down {
+  /* line 195, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+  .side-nav.fixed {
+    transform: translateX(-105%);
+  }
+  /* line 198, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+  .side-nav.fixed.right-aligned {
+    transform: translateX(105%);
+  }
+  /* line 203, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+  .side-nav a {
+    padding: 0 16px;
+  }
+  /* line 207, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+  .side-nav .user-view,
+  .side-nav .userView {
+    padding: 16px 16px 0;
+  }
+}
+/* line 215, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
+.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+  background-color: grey;
+}
+/* line 218, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+.side-nav .collapsible-body > ul:not(.collapsible) > li.active a,
+.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active a {
+  color: #fff;
+}
+
+/* line 227, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/materialize.scss */
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  will-change: opacity;
+}
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 11, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+* {
+  letter-spacing: 1.5px;
+}
+
+/* line 14, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+html {
+  font-family: Lato;
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  font-size: 14px;
+}
+
+/* line 21, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+p {
+  margin: 0;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 40, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 54, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 67, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/* line 72, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+.theme__main-content--container {
+  padding-top: 100px;
+}
+
+@media only screen and (min-width: 990px) {
+  /* line 76, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+  .theme__main-content--container {
+    padding-top: 120px;
+  }
+}
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 85, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 94, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 105, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 118, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 128, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 138, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 147, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 157, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 168, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 176, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 185, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 194, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 202, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 206, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 217, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 226, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 235, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 243, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 255, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 271, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 281, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 292, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 303, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 315, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+/* line 326, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 337, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 351, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 360, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 369, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 379, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 389, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 398, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 408, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 421, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 430, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 441, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 449, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 460, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/*============================================================================
+  Responsive tables, defined with .responsive-table on table element.
+==============================================================================*/
+@media only screen and (max-width: 749px) {
+  /* line 5, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table {
+    width: 100%;
+  }
+  /* line 8, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table thead {
+    display: none;
+  }
+  /* line 12, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table tr {
+    display: block;
+  }
+  /* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table tr,
+  .responsive-table td {
+    float: left;
+    clear: both;
+    width: 100%;
+  }
+  /* line 24, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table th,
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    padding: 12.5px;
+    margin: 0;
+  }
+  /* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    text-align: center;
+    padding-right: 10px;
+  }
+
+  /* line 41, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table-row + .responsive-table-row,
+  tfoot > .responsive-table-row:first-child {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 12.5px;
+  }
+  /* line 47, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/responsive-tables.scss */
+  .responsive-table-row + .responsive-table-row::after,
+  tfoot > .responsive-table-row:first-child::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 12.5px;
+    right: 12.5px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+}
+/*================ Rich Text Editor ================*/
+/* line 3, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte img {
+  height: auto;
+}
+/* line 7, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte table {
+  table-layout: fixed;
+}
+/* line 11, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte ul,
+.rte ol {
+  margin: 0 0 12.5px 25px;
+}
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte ul {
+  list-style: disc outside;
+}
+/* line 20, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte ul ul {
+  list-style: circle outside;
+}
+/* line 23, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte ul ul ul {
+  list-style: square outside;
+}
+
+/* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.text-center.rte ul,
+.text-center.rte ol,
+.text-center .rte ul,
+.text-center .rte ol {
+  margin-left: 0;
+  list-style-position: inside;
+}
+
+/* line 42, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte-table {
+  max-width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 50, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte__video-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  height: auto;
+}
+/* line 58, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte__video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 69, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/rte.scss */
+.rte__table-wrapper {
+  max-width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*================ Slate specific reset ================*/
+/* line 2, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* line 8, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+a:focus {
+  color: inherit;
+}
+
+/* line 21, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+img {
+  max-width: 100%;
+}
+
+/*================ Form element helpers ================*/
+/* line 26, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+form {
+  margin: 0;
+}
+
+@media only screen and (max-width: 989px) {
+  /* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+/* line 39, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+button,
+input[type="submit"],
+label[for] {
+  cursor: pointer;
+}
+
+/* line 45, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+optgroup {
+  font-weight: 700;
+}
+
+/* line 50, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+option {
+  background-color: #fff;
+}
+
+/* line 56, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+/*============================================================================
+  Fast Tap
+  enables no-delay taps (FastClick-esque) on supporting browsers
+==============================================================================*/
+/* line 64, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/global/slate-reset.scss */
+a,
+button,
+[role="button"],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* line 1, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/header.scss */
+.header__logo--container {
+  width: 130px;
+  padding: 16px 0;
+  position: relative;
+}
+
+/* line 6, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/header.scss */
+.header__navigation--btn {
+  height: 40px;
+  color: #572142;
+  background: transparent;
+  border: 1px solid #572142;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-weight: bolder;
+  transition: .3s ease all;
+}
+/* line 15, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/header.scss */
+.header__navigation--btn:hover {
+  color: white;
+  background-color: #572142;
+}
+
+/* line 1, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__content-title--container {
+  margin: 32px 0;
+  font-size: 32px;
+}
+
+/* line 5, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__week-displays--container {
+  height: 50px;
+}
+
+/* line 12, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__time-range {
+  font-size: 24px;
+}
+
+/* line 17, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__img {
+  filter: brightness(55%);
+  height: 450px;
+}
+
+/* line 22, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__days--container--inner {
+  height: 70%;
+  transition: .3s ease all;
+}
+/* line 25, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__days--container--inner p {
+  font-weight: bolder;
+}
+
+/* line 30, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__weekday .hours__time-range, .hours__weekend .hours__time-range {
+  opacity: .4;
+}
+
+/* line 35, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__weekday.active .hours__time-range, .hours__weekend.active .hours__time-range {
+  opacity: 1;
+}
+
+/* line 39, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__day {
+  padding: 0 16px;
+  height: 100%;
+  width: 100%;
+  transition: .2s ease all;
+}
+
+/* line 46, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/hours.scss */
+.hours__day.active {
+  background-color: #572142;
+  color: white;
+}
+
+/* line 1, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal--container {
+  padding: 32px;
+}
+
+/* line 4, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal-logo--container {
+  max-width: 120px;
+  margin: 0 auto;
+}
+
+/* line 8, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal-form--container {
+  padding-top: 16px;
+}
+
+/* line 13, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal-form-input--container {
+  margin-top: 16px;
+}
+
+/* line 19, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__form--label {
+  font-weight: bolder;
+}
+
+/* line 22, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal--input {
+  border: 1px solid grey;
+  padding-left: 8px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+/* line 29, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal-form-submit--container {
+  margin-top: 16px;
+}
+
+/* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/partials/reservation.scss */
+.reservation__modal-form-submit {
+  background-color: #572142;
+  color: white;
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  font-weight: bolder;
+  border-radius: 3px;
+}
+
+/* line 16, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__hero-img--container img {
+  filter: brightness(55%);
+}
+
+/* line 20, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__hero-text--container {
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+/* line 32, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__hero--text {
+  font-size: 6em;
+}
+
+/* line 35, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__cta--container {
+  margin-top: 16px;
+}
+
+/* line 38, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__cta-btn {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  height: 40px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-weight: bolder;
+  transition: .3s ease all;
+}
+/* line 50, /home/jonathan/Desktop/RailsApps/ziller/app/assets/stylesheets/templates/users.scss */
+.landing__cta-btn:hover {
+  border: none;
+  color: white;
+  background-color: #572142;
+}

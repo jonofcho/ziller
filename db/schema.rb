@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128045251) do
+ActiveRecord::Schema.define(version: 20180201034707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,23 @@ ActiveRecord::Schema.define(version: 20180128045251) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.index ["collection_id"], name: "index_products_on_collection_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "customer_name"
+    t.string "email"
+    t.string "phone"
+    t.integer "guest"
+    t.date "date"
+    t.string "arriving_time"
+    t.string "service"
+    t.string "occasion"
+    t.string "comments"
+  end
+
+  add_foreign_key "products", "collections"
 end
